@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+
+//this = 보이지않는 매개변수로서 클래스의 포인터역할을 한다.
+class myclass {
+public:
+	void printfthis(){
+		cout << "내 주소" << this << endl;
+		}
+};
+
+
+int main() {
+	myclass a, b;
+
+	cout << "a의 주소" << &a << endl;
+	cout << "b의 주소" << &b << endl;
+
+	a.printfthis();
+	b.printfthis();
+}
