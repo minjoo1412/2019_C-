@@ -1,0 +1,42 @@
+#include <iostream>
+
+using namespace std;
+
+//struct 는 기본적으로 public으로 선언되고, class는 private로 선언됨
+struct tv {
+	bool poweron;
+	int channel;
+	int volume;
+
+public:
+	void on() {
+		poweron = true;
+		cout << "TV를 킴" << endl;
+	}
+
+	void off() {
+		poweron = false;
+		cout << "TV를 끔" << endl;
+	}
+
+	void setchannel(int cnl) {
+		if (cnl >= 1 && cnl <= 99) {
+			channel = cnl;
+			cout << "채널 변경" << cnl << endl;
+		}
+	}
+
+	void setvolume(int vol) {
+		if (vol > 0 && vol <= 100) {
+			volume = vol;
+		}
+	}
+};
+
+int main() {
+	tv min;
+	min.poweron = true;
+	min.channel = 25;
+	min.volume = 30;
+	min.setvolume(50);
+}
