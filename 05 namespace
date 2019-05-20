@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int n;
+void set() {
+	::n = 10;
+}
+
+namespace minjoo {
+	int n;
+	void set() {
+		minjoo::n = 20;
+	}
+}
+
+namespace min {
+	int n;
+	void set() {
+		min::n = 30;
+	}
+}
+
+//namespace 중복
+int m;
+void let() {
+	m = 10;
+}
+
+namespace kim {
+	int m;
+	void let() {
+		m = 20;
+	}
+
+	namespace joo {
+		void let() {
+			m = 30;
+		}
+		int m;
+	}
+}
+
+
+int main() {
+	::set();//전역에 있는 set함수
+	minjoo::set();
+	min::set();
+
+	cout << ::n << endl;
+	cout << minjoo::n << endl;
+	cout << min::n << endl;
+
+	//namespace 중첩, 식별자검색
+	::let();
+	kim::let();
+	kim::joo::let();
+
+	cout << ::m << endl;
+	cout << kim::m << endl;
+	cout << kim::joo::m << endl;
+}
