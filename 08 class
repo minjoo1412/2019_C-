@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+class myclass {
+public:
+	myclass() {//생성자
+		cout << "생성자 호출" << endl;
+	}
+
+	~myclass() {//소멸자
+		cout << "소멸자 호출" << endl;
+	}
+};
+
+
+
+void test() {
+	cout << "test시작" << endl;
+	myclass global;
+	cout << "test종료" << endl;
+}
+
+
+int main() { 
+	cout << "시작" << endl;
+	test();
+	cout << "끝" << endl;
+}
