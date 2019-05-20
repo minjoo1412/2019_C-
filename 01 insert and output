@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	//std = name space 이름이 들어가는 공간, 성에 해당함(그 뒤에는 이름에 해당함)
+	std::cout << "hello world " << 10 << 'c' << std::endl;//endl = end line -> 줄바꿈
+
+	cout << "hello world " << 10 << 'c' << endl;// 위에 using namespace std;를 사용하면 std::를 사용하지 않아도 됨
+
+	int a, b;
+	cin >> a >> b;//입력
+
+	cout << a << "+" << b << "=" << a + b << endl;
+
+
+	string str;
+	str = "hello";
+	cout << str << endl;
+
+	string name;
+	cout << "이름입력 : ";
+	cin >> name;
+
+	string message = "hi, " + name;
+	cout << message << endl;
+}
